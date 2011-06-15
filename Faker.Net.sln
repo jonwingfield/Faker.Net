@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Net", "Faker.Net\Faker.Net.csproj", "{F4E27022-496C-48E5-8986-F68355C2ECB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Net.Tests", "Faker.Net.Tests\Faker.Net.Tests.csproj", "{CC6BCF3B-D7CF-4E80-B872-A666FA3595E7}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A7160D9-3119-4C29-9A72-5ED84C5488F6}"
 	ProjectSection(SolutionItems) = preProject
 		Faker.Net.vsmdi = Faker.Net.vsmdi
@@ -13,6 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{B373B46A-B089-44D7-96CA-CD150D098BC8}") = "Faker.Net.IronRuby.Tests", "Faker.Net.IronRuby.Tests\Faker.Net.IronRuby.Tests.rbproj", "{669DD2F4-19A2-4061-B3E7-03E188131A43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{2A65F025-CF12-4A2E-B780-298EE5FC1050}"
+	ProjectSection(SolutionItems) = preProject
+		lib\sugar.dll = lib\sugar.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -27,10 +30,6 @@ Global
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CC6BCF3B-D7CF-4E80-B872-A666FA3595E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CC6BCF3B-D7CF-4E80-B872-A666FA3595E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CC6BCF3B-D7CF-4E80-B872-A666FA3595E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CC6BCF3B-D7CF-4E80-B872-A666FA3595E7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
