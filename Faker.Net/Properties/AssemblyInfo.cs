@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Faker.Net")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Gentiva Health Services")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Faker.Net")]
-[assembly: AssemblyCopyright("Copyright © Gentiva Health Services 2011")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
