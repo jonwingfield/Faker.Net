@@ -20,7 +20,7 @@ namespace Faker
 
         public static string Sentence(int wordCount = 4)
         {
-            var s = Words(wordCount + new Random().Next(6));
+            var s = Words(wordCount + FakerRandom.Rand.Next(6));
             return s.Join(" ").ToUpper() + ".";
         }
 
@@ -31,7 +31,7 @@ namespace Faker
 
         public static string Paragraph(int sentenceCount = 3)
         {
-            return Sentences(sentenceCount + new Random().Next(3)).Join(" ");
+            return Sentences(sentenceCount + FakerRandom.Rand.Next(3)).Join(" ");
         }
 
         public static IEnumerable<string> Paragraphs(int paragraphCount = 3)

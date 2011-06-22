@@ -21,7 +21,7 @@ namespace Faker
 
         public static string Numerify(this string number_string)
         {
-            return number_string.Replace('#', () => new Random().Next(10).ToString().ToCharArray()[0]);
+            return number_string.Replace('#', () => FakerRandom.Rand.Next(10).ToString().ToCharArray()[0]);
         }
 
         public static string Letterify(this string letter_string)

@@ -14,7 +14,7 @@ namespace Faker
                 list = (IList<T>)items;
             else list = items.ToList();
 
-            return list[new Random(Environment.TickCount).Next(list.Count)];
+            return list[FakerRandom.Rand.Next(list.Count)];
         }
 
         public static IEnumerable<T> RandPick<T>(this IEnumerable<T> items, int itemsToTake)
@@ -24,7 +24,7 @@ namespace Faker
                 list = (IList<T>)items;
             else list = items.ToList();
 
-            var rand = new Random();
+            var rand = FakerRandom.Rand;
 
             for (int i=0; i<itemsToTake; i++)
                 yield return list[rand.Next(list.Count)];
@@ -39,7 +39,7 @@ namespace Faker
             T[] retArray = new T[array.Count];
             array.CopyTo(retArray, 0);
 
-            Random random = new Random();
+            Random random = FakerRandom.Rand;
             for (int i = 0; i < array.Count; i += 1)
             {
                 int swapIndex = random.Next(i, array.Count);

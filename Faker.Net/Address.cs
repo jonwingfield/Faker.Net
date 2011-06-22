@@ -40,7 +40,7 @@ namespace Faker
 
         public static string City()
         {
-            var item = new Random().Next(4);
+            var item = FakerRandom.Rand.Next(4);
             switch (item)
             {
                 case 0: return CityPrefix() + " " + Name.FirstName() + CitySuffix();
@@ -58,7 +58,7 @@ namespace Faker
 
         public static string StreetName()
         {
-            switch (new Random().Next(2))
+            switch (FakerRandom.Rand.Next(2))
             {
                 case 0: return Name.LastName() + " " + StreetSuffix();
                 case 1: return Name.FirstName() +" " + StreetSuffix();
@@ -67,7 +67,7 @@ namespace Faker
         }
 
         public static string StreetAddress(bool includeSecondary = false){
-            var str = (new Random().Next(3).Times("#")) + ("### " + StreetName());
+            var str = (FakerRandom.Rand.Next(3).Times("#")) + ("### " + StreetName());
           if (includeSecondary)
               str += " " + SecondaryAddress();
 

@@ -9,11 +9,11 @@ namespace Faker
     {
         public static string name()
         {
-            switch (new Random().Next(10))
+            switch (FakerRandom.Rand.Next(10))
             {
-                case 0: return Prefix() + FirstName() + LastName();
-                case 1: return FirstName() + LastName() + Suffix();
-                default: return FirstName() + LastName();
+                case 0: return Prefix() + " " + FirstName() + " " + LastName();
+                case 1: return FirstName() + " " + LastName() + " " + Suffix();
+                default: return FirstName() + " " + LastName();
             }
         }
 

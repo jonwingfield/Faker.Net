@@ -42,7 +42,7 @@ namespace Faker
             }
             else
             {
-                switch (new Random().Next(2))
+                switch (FakerRandom.Rand.Next(2))
                 {
                     case 0:
                         return new Regex(@"\W").Replace(Name.FirstName(), "").ToLower();

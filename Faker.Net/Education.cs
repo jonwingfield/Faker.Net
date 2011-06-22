@@ -30,7 +30,7 @@ namespace Faker
 
         public static string SchoolGenericName()
         {
-            switch (new Random().Next(2))
+            switch (FakerRandom.Rand.Next(2))
             {
                 case 0: return Address.USState();
                 default: return SchoolName();
@@ -40,7 +40,7 @@ namespace Faker
 
         public static string School()
         {
-            switch (new Random().Next(5))
+            switch (FakerRandom.Rand.Next(5))
             {
                 case 0:
                 case 1: return  SchoolName()+ " " +SCHOOL_TYPE.Rand();

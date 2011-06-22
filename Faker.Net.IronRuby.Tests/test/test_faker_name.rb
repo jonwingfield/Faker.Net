@@ -6,7 +6,7 @@ class TestFakerName < Test::Unit::TestCase
   end
 
   def test_name
-    assert @tester.name.match(/(\w+\.? ?){2,3}/)
+    assert @tester.name.match(/(\w+\.?) (\w+)( \w+)?/)
   end
 
   def test_prefix

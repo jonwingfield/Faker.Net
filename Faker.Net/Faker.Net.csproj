@@ -49,6 +49,7 @@
     <Compile Include="Education.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="FakerRandom.cs" />
     <Compile Include="GeoLocation.cs" />
     <Compile Include="Internet.cs" />
     <Compile Include="Lorem.cs" />

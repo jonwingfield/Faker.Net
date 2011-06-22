@@ -10,7 +10,7 @@ namespace Faker
     {
         public static string name()
         {
-            switch (new Random().Next(3))
+            switch (FakerRandom.Rand.Next(3))
             {
                 case 0: return Name.LastName() + " " + Suffix();
                 case 1: return Name.LastName() + "-" + Name.LastName();
@@ -41,7 +41,7 @@ namespace Faker
 
         public static string Position()
         {
-            switch (new Random().Next(3))
+            switch (FakerRandom.Rand.Next(3))
             {
                 case 0: return POSITION_PREFIXES.Rand() + " " + POSITIONS.Rand();
                 case 1: return POSITION_AREAS.Rand() + " " + POSITIONS.Rand();

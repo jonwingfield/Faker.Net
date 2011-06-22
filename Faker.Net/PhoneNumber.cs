@@ -15,7 +15,7 @@ namespace Faker
         
         private static string _phoneNumber()
         {
-            switch (new Random().Next(20))
+            switch (FakerRandom.Rand.Next(20))
             {
                 case 0: return "###-###-#### x#####";
                 case 1: return "###-###-#### x####";
