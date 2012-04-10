@@ -1,7 +1,7 @@
 Faker.NET
 ================================================
 
-As much as possible, a line-for-line port of ffaker for ruby (https://github.com/emmanueloga/faker).
+As much as possible, a line-for-line port of ffaker for ruby (https://github.com/EmmanuelOga/ffaker).
 
 Relies on my fork (https://github.com/jonwingfield/sugar) of Rob Conery's excellent sugar library (I plan on requesting a pull eventually).
 
