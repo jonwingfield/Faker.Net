@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Faker
+namespace Faker.Extensions
 {
     internal static class EnumerableExtensions
     {
+		public static string Join<T>(this IEnumerable<T> items, string separator)
+		{
+			return items.Select(i => i.ToString())
+						.Aggregate((acc, next) => string.Concat(acc, separator, next));
+		}
+		
         public static T Rand<T>(this IEnumerable<T> items)
         {
             IList<T> list;

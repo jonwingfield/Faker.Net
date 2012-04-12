@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using System.Text.RegularExpressions;
+using Faker.Extensions;
 
 namespace Faker
 {
@@ -48,7 +47,7 @@ namespace Faker
                         return new Regex(@"\W").Replace(Name.FirstName(), "").ToLower();
                     case 1:
                         var parts = new[] { Name.FirstName(), Name.LastName() }.Select(n => new Regex(@"\W").Replace(n, ""));
-                        return parts.Join(new[] { ".", "_" }.Rand()).ToLower();
+						return parts.Join(new[] { ".", "_" }.Rand()).ToLower();
                     default: throw new ApplicationException();
                 }
             }

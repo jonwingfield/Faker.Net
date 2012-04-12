@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Faker
+namespace Faker.Extensions
 {
     internal static class StringExtensions
     {
@@ -33,5 +33,12 @@ namespace Faker
         {
             return Letterify(Numerify(str));
         }
+		
+		public static IEnumerable<char> To(this char from, char to)
+		{
+			for(char i = from; i <= to; i++) {
+				yield return i;
+			}
+		}
     }
 }
