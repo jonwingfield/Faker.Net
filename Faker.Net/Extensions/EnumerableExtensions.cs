@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Faker.Extensions
 {
-    internal static class EnumerableExtensions
+    public static class EnumerableExtensions
     {
 		public static string Join<T>(this IEnumerable<T> items, string separator)
 		{

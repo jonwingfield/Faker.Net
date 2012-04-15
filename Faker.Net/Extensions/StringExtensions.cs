@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Faker.Extensions
 {
-    internal static class StringExtensions
+    public static class StringExtensions
     {
         public static string Replace(this string str, char item, Func<char> character)
         {

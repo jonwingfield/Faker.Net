@@ -8,7 +8,7 @@
     <ProjectGuid>{3E4DAE88-371F-41DD-B8DC-0002025CA569}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>Faker</RootNamespace>
-    <AssemblyName>Faker.Mono</AssemblyName>
+    <AssemblyName>Faker</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
