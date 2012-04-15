@@ -1,8 +1,6 @@
-using System;
 using System.Text.RegularExpressions;
-using NUnit.Framework;
-using Faker;
 using Faker.Extensions;
+using NUnit.Framework;
 
 namespace Faker.Tests
 {
@@ -12,36 +10,36 @@ namespace Faker.Tests
 		[Test]
 		public void TestParagraph()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Paragraph(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetParagraph(), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestSentence()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Sentence(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetSentence(), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestWord()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Word(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetWord(), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestParagraphs()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Paragraphs().Join(" "), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetParagraphs().Join(" "), @"[ a-z]+"));
 		}
 		
 		public void TestSentences()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Sentences().Join(" "), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetSentences().Join(" "), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestWords()
 		{
-			Assert.IsTrue(Regex.IsMatch(Lorem.Words().Join(" "), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Lorem.GetWords().Join(" "), @"[ a-z]+"));
 		}
 	}
 }

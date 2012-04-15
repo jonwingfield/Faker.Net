@@ -1,7 +1,5 @@
-using System;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
-using Faker;
 
 namespace Faker.Tests
 {
@@ -11,13 +9,13 @@ namespace Faker.Tests
 		[Test]
 		public void TestLat()
 		{
-			Assert.IsTrue(Regex.IsMatch(GeoLocation.Lat().ToString(), "[0-9]+"));
+			Assert.IsTrue(Regex.IsMatch(GeoLocation.GetLat().ToString(), "[0-9]+"));
 		}
 
 		[Test]
 		public void TestLng()
 		{
-			Assert.IsTrue(Regex.IsMatch(GeoLocation.Lng().ToString(), "[0-9]+"));
+			Assert.IsTrue(Regex.IsMatch(GeoLocation.GetLng().ToString(), "[0-9]+"));
 		}
 	}
 }

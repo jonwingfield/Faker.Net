@@ -1,7 +1,5 @@
-using System;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
-using Faker;
 
 namespace Faker.Tests
 {
@@ -11,27 +9,27 @@ namespace Faker.Tests
 		[Test]
 		public void TestBS()
 		{
-			Assert.IsTrue(Regex.IsMatch(Company.BS(), @"[ a-z]+"));
-			Assert.IsTrue(Regex.IsMatch(Company.BS(), @"\s"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetBS(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetBS(), @"\s"));
 		}
 		
 		[Test]
 		public void TestCatchPhrase()
 		{
-			Assert.IsTrue(Regex.IsMatch(Company.CatchPhrase(), @"[ a-z]+"));
-			Assert.IsTrue(Regex.IsMatch(Company.CatchPhrase(), @"\s"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetCatchPhrase(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetCatchPhrase(), @"\s"));
 		}
 		
 		[Test]
 		public void TestName()
 		{
-			Assert.IsTrue(Regex.IsMatch(Company.name(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetName(), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestSuffix()
 		{
-			Assert.IsTrue(Regex.IsMatch(Company.Suffix(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Company.GetSuffix(), @"[ a-z]+"));
 		}
 	}
 }

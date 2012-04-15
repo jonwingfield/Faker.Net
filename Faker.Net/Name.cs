@@ -1,38 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Faker.Extensions;
+﻿using Faker.Extensions;
 
 namespace Faker
 {
     public static class Name
     {
-        public static string name()
+        public static string GetName()
         {
             switch (FakerRandom.Rand.Next(10))
             {
-                case 0: return Prefix() + " " + FirstName() + " " + LastName();
-                case 1: return FirstName() + " " + LastName() + " " + Suffix();
-                default: return FirstName() + " " + LastName();
+                case 0: return GetPrefix() + " " + GetFirstName() + " " + GetLastName();
+                case 1: return GetFirstName() + " " + GetLastName() + " " + GetSuffix();
+                default: return GetFirstName() + " " + GetLastName();
             }
         }
 
-        public static string FirstName()
+        public static string GetFirstName()
         {
             return FIRST_NAMES.Rand();
         }
 
-        public static string LastName()
+        public static string GetLastName()
         {
             return LAST_NAMES.Rand();
         }
 
-        public static string Prefix()
+        public static string GetPrefix()
         {
             return PREFIXES.Rand();
         }
 
-        public static string Suffix()
+        public static string GetSuffix()
         {
             return SUFFIXES.Rand();
         }

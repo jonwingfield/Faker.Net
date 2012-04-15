@@ -1,51 +1,48 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Faker.Extensions;
+﻿using Faker.Extensions;
 
 namespace Faker
 {
     public static class Education
     {
-        public static string DegreeShort()
+        public static string GetDegreeShort()
         {
-            return DEGREE_SHORT_PREFIX.Rand() + " in " + Major();
+            return DEGREE_SHORT_PREFIX.Rand() + " in " + GetMajor();
         }
 
-        public static string Degree()
+        public static string GetDegree()
         {
-            return DEGREE_PREFIX.Rand() + " in " + Major();
+            return DEGREE_PREFIX.Rand() + " in " + GetMajor();
         }
 
-        public static string Major()
+        public static string GetMajor()
         {
             return MAJOR_ADJ.Rand() + " " + MAJOR_NOUN.Rand();
         }
 
-        public static string SchoolName()
+        public static string GetSchoolName()
         {
             return SCHOOL_PREFIX.Rand() + SCHOOL_SUFFIX.Rand();
         }
 
-        public static string SchoolGenericName()
+        public static string GetSchoolGenericName()
         {
             switch (FakerRandom.Rand.Next(2))
             {
-                case 0: return Address.USState();
-                default: return SchoolName();
+                case 0: return Address.GetUSState();
+                default: return GetSchoolName();
 
             }
         }
 
-        public static string School()
+        public static string GetSchool()
         {
             switch (FakerRandom.Rand.Next(5))
             {
                 case 0:
-                case 1: return  SchoolName()+ " " +SCHOOL_TYPE.Rand();
-                case 2: return  SchoolGenericName()+ " " + SCHOOL_ADJ.Rand() + " " + SCHOOL_TYPE.Rand();
-                case 3: return  SCHOOL_UNI.Rand() + " of " + SchoolGenericName();
-                default: return SchoolGenericName() + " " + SCHOOL_TYPE.Rand() + " of " + MAJOR_NOUN.Rand();
+                case 1: return  GetSchoolName()+ " " +SCHOOL_TYPE.Rand();
+                case 2: return  GetSchoolGenericName()+ " " + SCHOOL_ADJ.Rand() + " " + SCHOOL_TYPE.Rand();
+                case 3: return  SCHOOL_UNI.Rand() + " of " + GetSchoolGenericName();
+                default: return GetSchoolGenericName() + " " + SCHOOL_TYPE.Rand() + " of " + MAJOR_NOUN.Rand();
             }
         }
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Faker.Extensions;
@@ -13,26 +12,27 @@ namespace Faker
             BYTE = 0.To(255).Select(item => item.ToString()).ToArray();
         }
 
-        public static string Email(string name = null)
+        public static string GetEmail(string name = null)
         {
-            return UserName(name) + '@' + DomainName();
+            return GetUserName(name) + '@' + GetDomainName();
         }
 
         /// <summary>
-        /// returns an email address of an online disposable email service (like tempinbox.com).
+        /// Returns an email address of an online disposable email service (like tempinbox.com).
         /// you can really send an email to these addresses an access it by going to the service web pages.
+        /// <param name="name">User Name initial value.</param>
         /// </summary>
-        public static string DisposableEmail(string name = null)
+        public static string GetDisposableEmail(string name = null)
         {
-            return UserName(name) + '@' + DISPOSABLE_HOSTS.Rand();
+            return GetUserName(name) + '@' + DISPOSABLE_HOSTS.Rand();
         }
 
-        public static string FreeEmail(string name = null)
+        public static string GetFreeEmail(string name = null)
         {
-            return UserName(name) + "@" + HOSTS.Rand();
+            return GetUserName(name) + "@" + HOSTS.Rand();
         }
 
-        public static string UserName(string name = null)
+        public static string GetUserName(string name = null)
         {
             if (name != null)
             {
@@ -44,44 +44,44 @@ namespace Faker
                 switch (FakerRandom.Rand.Next(2))
                 {
                     case 0:
-                        return new Regex(@"\W").Replace(Name.FirstName(), "").ToLower();
+                        return new Regex(@"\W").Replace(Name.GetFirstName(), "").ToLower();
                     case 1:
-                        var parts = new[] { Name.FirstName(), Name.LastName() }.Select(n => new Regex(@"\W").Replace(n, ""));
+                        var parts = new[] { Name.GetFirstName(), Name.GetLastName() }.Select(n => new Regex(@"\W").Replace(n, ""));
 						return parts.Join(new[] { ".", "_" }.Rand()).ToLower();
                     default: throw new ApplicationException();
                 }
             }
         }
 
-        public static string DomainName()
+        public static string GetDomainName()
         {
-            return DomainWord() + "." + DomainSuffix();
+            return GetDomainWord() + "." + GetDomainSuffix();
         }
 
-        public static string DomainWord()
+        public static string GetDomainWord()
         {
-            string dw = Company.name().Split(' ').First();
+            string dw = Company.GetName().Split(' ').First();
             dw = new Regex(@"\W").Replace(dw, "");
             dw = dw.ToLower();
             return dw;
         }
 
-        public static string DomainSuffix()
+        public static string GetDomainSuffix()
         {
             return DOMAIN_SUFFIXES.Rand();
         }
 
-        public static string Uri(string protocol)
+        public static string GetUri(string protocol)
         {
-            return protocol + "://" + DomainName();
+            return protocol + "://" + GetDomainName();
         }
 
-        public static string HttpUrl()
+        public static string GetHttpUrl()
         {
-            return Uri("http");
+            return GetUri("http");
         }
 
-        public static string IP_V4_Address()
+        public static string GetIP_V4_Address()
         {
             return BYTE.RandPick(4).Join(".");
         }

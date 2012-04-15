@@ -1,7 +1,5 @@
-using System;
 using System.Text.RegularExpressions;
 using NUnit.Framework;
-using Faker;
 
 namespace Faker.Tests
 {
@@ -11,85 +9,85 @@ namespace Faker.Tests
 		[Test]
 		public void TestCity()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.City(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetCity(), @"[ a-z]+"));
 		}
 		
 		[Test]
 		public void TestCityPrefix()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.CityPrefix(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetCityPrefix(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestCitySuffix()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.CitySuffix(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetCitySuffix(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestSecondaryAddress()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.SecondaryAddress(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetSecondaryAddress(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestStreetAddress()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.StreetAddress(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetStreetAddress(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestStreetName()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.StreetName(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetStreetName(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestStreetSuffix()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.StreetSuffix(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetStreetSuffix(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestUKCountry()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.UKCounty(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUKCounty(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestUKCounty()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.UKCounty(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUKCounty(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestUKPostcode()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.UKPostcode(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUKPostcode(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestUSState()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.USState(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUSState(), @"[ a-z]"));
 		}
 		
 		[Test]
 		public void TestUSStateAbbr()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.USStateAbbr(), @"[A-Z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUSStateAbbr(), @"[A-Z]"));
 		}
 		
 		[Test]
 		public void TestUSZipCode()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.ZipCode(), @"[0-9]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetZipCode(), @"[0-9]"));
 		}
 		
 		[Test]
 		public void TestNeighborhood()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.Neighborhood(), @"[ a-z]+"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetNeighborhood(), @"[ a-z]+"));
 		}
 	}
 }

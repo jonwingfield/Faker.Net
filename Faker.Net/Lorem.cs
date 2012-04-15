@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Faker.Extensions;
 
@@ -7,35 +6,35 @@ namespace Faker
 {
     public static class Lorem
     {
-        public static string Word()
+        public static string GetWord()
         {
             return WORDS.Rand();
         }
 
-        public static IEnumerable<string> Words(int num = 3)
+        public static IEnumerable<string> GetWords(int num = 3)
         {
             return WORDS.RandPick(num);
         }
 
-        public static string Sentence(int wordCount = 4)
+        public static string GetSentence(int wordCount = 4)
         {
-            var s = Words(wordCount + FakerRandom.Rand.Next(6));
+            var s = GetWords(wordCount + FakerRandom.Rand.Next(6));
             return s.Join(" ").ToUpper() + ".";
         }
 
-        public static IEnumerable<string> Sentences(int sentenceCount = 3)
+        public static IEnumerable<string> GetSentences(int sentenceCount = 3)
         {
-            return 1.To(sentenceCount).Select(item => Sentence());
+            return 1.To(sentenceCount).Select(item => GetSentence());
         }
 
-        public static string Paragraph(int sentenceCount = 3)
+        public static string GetParagraph(int sentenceCount = 3)
         {
-            return Sentences(sentenceCount + FakerRandom.Rand.Next(3)).Join(" ");
+            return GetSentences(sentenceCount + FakerRandom.Rand.Next(3)).Join(" ");
         }
 
-        public static IEnumerable<string> Paragraphs(int paragraphCount = 3)
+        public static IEnumerable<string> GetParagraphs(int paragraphCount = 3)
         {
-            return 1.To(paragraphCount).Select(item => Paragraph());
+            return 1.To(paragraphCount).Select(item => GetParagraph());
         }
 
         static readonly string[] WORDS = new[] {"alias", "consequatur", "aut", "perferendis", "sit", "voluptatem", "accusantium",

@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Faker.Extensions;
 
 namespace Faker
 {
     public static class PhoneNumber
     {
-        public static string phone_number()
+        public static string GetPhoneNumber()
         {
-            return _phoneNumber().Numerify();
+            return FormatPhoneNumber().Numerify();
         }
         
-        private static string _phoneNumber()
+        private static string FormatPhoneNumber()
         {
             switch (FakerRandom.Rand.Next(20))
             {
@@ -40,7 +38,7 @@ namespace Faker
             }
         }
 
-        public static string ShortPhoneNumber()
+        public static string GetShortPhoneNumber()
         {
             return "###-###-####".Numerify();
         }

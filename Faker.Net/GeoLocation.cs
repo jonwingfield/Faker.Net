@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Faker.Extensions;
 
 namespace Faker
 {
     public static class GeoLocation
     {
-        public static double Lat()
+        public static double GetLat()
         {
             return LATLNG.Rand().Item1;
         }
 
-        public static double Lng()
+        public static double GetLng()
         {
             return LATLNG.Rand().Item2;
         }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using Faker.Extensions;
 
@@ -12,89 +11,89 @@ namespace Faker
             CITY_PREFIXES = _CITY_PREFIXES.SelectMany(item => COMPASS_DIRECTIONS.Select(dir => dir + " " + item)).ToArray();
         }
 
-        public static string ZipCode()
+        public static string GetZipCode()
         {
             return ZIP_FORMATS.Rand().Numerify();
         }
 
-        public static string USState()
+        public static string GetUSState()
         {
             return STATE.Rand();
         }
 
-        public static string USStateAbbr()
+        public static string GetUSStateAbbr()
         {
             return STATE_ABBR.Rand();
         }
 
-        public static string CityPrefix()
+        public static string GetCityPrefix()
         {
             return CITY_PREFIXES.Rand();
         }
 
-        public static string CitySuffix()
+        public static string GetCitySuffix()
         {
             return CITY_SUFFIXES.Rand();
         }
 
-        public static string City()
+        public static string GetCity()
         {
             var item = FakerRandom.Rand.Next(4);
             switch (item)
             {
-                case 0: return CityPrefix() + " " + Name.FirstName() + CitySuffix();
-                case 1: return CityPrefix() + " " + Name.FirstName();
-                case 2: return Name.FirstName() + CitySuffix();
-                case 3: return Name.LastName() + CitySuffix();
+                case 0: return GetCityPrefix() + " " + Name.GetFirstName() + GetCitySuffix();
+                case 1: return GetCityPrefix() + " " + Name.GetFirstName();
+                case 2: return Name.GetFirstName() + GetCitySuffix();
+                case 3: return Name.GetLastName() + GetCitySuffix();
                 default: throw new ApplicationException();
             }
         }
 
-        public static string StreetSuffix()
+        public static string GetStreetSuffix()
         {
             return STREET_SUFFIX.Rand();
         }
 
-        public static string StreetName()
+        public static string GetStreetName()
         {
             switch (FakerRandom.Rand.Next(2))
             {
-                case 0: return Name.LastName() + " " + StreetSuffix();
-                case 1: return Name.FirstName() +" " + StreetSuffix();
+                case 0: return Name.GetLastName() + " " + GetStreetSuffix();
+                case 1: return Name.GetFirstName() +" " + GetStreetSuffix();
                 default: throw new ApplicationException();
             }
         }
 
-        public static string StreetAddress(bool includeSecondary = false){
-            var str = (FakerRandom.Rand.Next(3).Times("#")) + ("### " + StreetName());
+        public static string GetStreetAddress(bool includeSecondary = false){
+            var str = (FakerRandom.Rand.Next(3).Times("#")) + ("### " + GetStreetName());
           if (includeSecondary)
-              str += " " + SecondaryAddress();
+              str += " " + GetSecondaryAddress();
 
           return str.Numerify();
         }
 
-        public static string SecondaryAddress()
+        public static string GetSecondaryAddress()
         {
             return SEC_ADDR.Rand().Numerify();
         }
 
         // UK Variants
-        public static string UKCounty()
+        public static string GetUKCounty()
         {
             return UK_COUNTY.Rand();
         }
 
-        public static string UKCountry()
+        public static string GetUKCountry()
         {
             return UK_COUNTRY.Rand();
         }
 
-        public static string UKPostcode()
+        public static string GetUKPostcode()
         {
             return UK_POSTCODE.Rand().Bothify().ToUpper();
         }
 
-        public static string Neighborhood()
+        public static string GetNeighborhood()
         {
             return NEIGHBORHOOD.Rand();
         }
