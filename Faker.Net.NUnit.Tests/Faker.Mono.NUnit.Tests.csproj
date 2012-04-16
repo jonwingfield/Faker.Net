@@ -53,5 +53,9 @@
     <Compile Include="CompanyTests.cs" />
     <Compile Include="AddressTests.cs" />
     <Compile Include="InternetTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
   </ItemGroup>
 </Project>
