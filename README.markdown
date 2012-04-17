@@ -12,7 +12,9 @@ Building
 ------------------------------------------------
 
 nant build
+
 nant build -D:mode=Debug
+
 
 Tests
 ------------------------------------------------
@@ -22,6 +24,7 @@ There is a project in the solution named Faker.Net.NUnit.Tests that uses the rel
 NAnt command to run unit-tests
 
 nant test
+
 nant test -D:mode=Debug
 
 
@@ -29,6 +32,7 @@ Cleaning build output
 -------------------------------------------------
 
 nant clean
+
 nant clean -D:mode=Debug
 
 
