@@ -35,10 +35,15 @@
         </csc>
 
         <echo message="Running Faker.Net unit-tests" />
-        <nunit2>
+		
+        <copy file="./NUnit/nunit.framework.dll" todir="${output}" />
+		
+		<nunit2>
             <formatter type="Plain" />
             <test assemblyname="${output}/Faker.Tests.dll" />
         </nunit2>
+		
+		<delete file="${output}/nunit.framework.dll" />
     </target>
 
     <target name="clean">
