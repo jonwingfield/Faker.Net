@@ -1,4 +1,5 @@
-﻿using Faker.Extensions;
+﻿using System;
+using Faker.Extensions;
 
 namespace Faker
 {
@@ -44,6 +45,42 @@ namespace Faker
                 case 3: return  SCHOOL_UNI.Rand() + " of " + GetSchoolGenericName();
                 default: return GetSchoolGenericName() + " " + SCHOOL_TYPE.Rand() + " of " + MAJOR_NOUN.Rand();
             }
+        }
+		
+		[Obsolete]
+        public static string DegreeShort()
+        {
+			return GetDegreeShort();
+        }
+		
+		[Obsolete]
+        public static string Degree()
+        {
+			return GetDegree();
+        }
+		
+		[Obsolete]
+        public static string Major()
+        {
+			return GetMajor();
+        }
+		
+		[Obsolete]
+        public static string SchoolName()
+        {
+			return GetSchoolName();
+        }
+		
+		[Obsolete]
+        public static string SchoolGenericName()
+        {
+			return GetSchoolGenericName();
+        }
+		
+		[Obsolete]
+        public static string School()
+        {
+			return GetSchool();
         }
 
         static readonly string[] DEGREE_SHORT_PREFIX = new[] { "AB", "BS", "BSc", "MA", "MD", "DMus", "DPhil" };

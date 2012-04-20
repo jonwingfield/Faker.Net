@@ -86,6 +86,66 @@ namespace Faker
             return BYTE.RandPick(4).Join(".");
         }
 
+		[Obsolete]
+        public static string Email(string name = null)
+        {
+			return GetEmail(name);
+        }
+		
+		[Obsolete]
+        public static string DisposableEmail(string name = null)
+        {
+			return GetDisposableEmail(name);
+        }
+		
+		[Obsolete]
+        public static string FreeEmail(string name = null)
+        {
+			return GetFreeEmail(name);
+        }
+		
+		[Obsolete]
+        public static string UserName(string name = null)
+        {
+			return GetUserName(name);
+        }
+		
+		[Obsolete]
+        public static string DomainName()
+        {
+			return GetDomainName();
+        }
+		
+		[Obsolete]
+        public static string DomainWord()
+        {
+			return GetDomainWord();
+        }
+		
+		[Obsolete]
+        public static string DomainSuffix()
+        {
+			return GetDomainSuffix();
+        }
+		
+		[Obsolete]
+        public static string Uri(string protocol)
+        {
+			return GetUri(protocol);
+        }
+		
+		[Obsolete]
+        public static string HttpUrl()
+        {
+			return GetHttpUrl();
+        }
+		
+		[Obsolete]
+        public static string IP_V4_Address()
+        {
+			return GetIP_V4_Address();
+        }
+
         private static readonly string[] BYTE; //new [] { ((0..255).to_a.map { |n| n.to_s })
         static readonly string[] HOSTS = new[] { "gmail.com", "yahoo.com", "hotmail.com" };
         static readonly string[] DISPOSABLE_HOSTS = new[] { "mailinator.com", "suremail.info", "spamherelots.com", "binkmail.com", "safetymail.info", "tempinbox.com" };

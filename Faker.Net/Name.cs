@@ -1,4 +1,5 @@
-﻿using Faker.Extensions;
+﻿using System;
+using Faker.Extensions;
 
 namespace Faker
 {
@@ -32,6 +33,36 @@ namespace Faker
         public static string GetSuffix()
         {
             return SUFFIXES.Rand();
+        }
+		
+		[Obsolete]
+		public static string name()
+        {
+			return GetName();
+        }
+		
+		[Obsolete]
+        public static string FirstName()
+        {
+			return GetFirstName();
+        }
+		
+		[Obsolete]
+        public static string LastName()
+        {
+			return GetLastName();
+        }
+		
+		[Obsolete]
+        public static string Prefix()
+        {
+			return GetPrefix();
+        }
+		
+		[Obsolete]
+        public static string Suffix()
+        {
+			return GetSuffix();
         }
 
         static readonly string[] FIRST_NAMES = new[] {"Aaliyah", "Aaron", "Abagail", "Abbey", "Abbie", "Abbigail", "Abby", "Abdiel", "Abdul",

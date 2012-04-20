@@ -14,6 +14,18 @@ namespace Faker
         {
             return LATLNG.Rand().Item2;
         }
+		
+		[Obsolete]
+		public static double Lat()
+        {
+			return GetLat();
+        }
+		
+		[Obsolete]
+        public static double Lng()
+        {
+			return GetLng();
+        }
 
         readonly static Tuple<double, double>[] LATLNG = new[] {
 			Tuple.Create(41.022921,-73.667595), 

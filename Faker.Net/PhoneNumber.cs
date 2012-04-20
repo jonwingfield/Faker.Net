@@ -42,5 +42,17 @@ namespace Faker
         {
             return "###-###-####".Numerify();
         }
+		
+		[Obsolete]
+        public static string phone_number()
+        {
+			return GetPhoneNumber();
+        }
+        
+		[Obsolete]
+        public static string ShortPhoneNumber()
+        {
+			return GetShortPhoneNumber();
+        }
     }
 }

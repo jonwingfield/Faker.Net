@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Faker.Extensions;
 
@@ -35,6 +36,42 @@ namespace Faker
         public static IEnumerable<string> GetParagraphs(int paragraphCount = 3)
         {
             return 1.To(paragraphCount).Select(item => GetParagraph());
+        }
+		
+		[Obsolete]
+		public static string Word()
+        {
+			return GetWord();
+        }
+		
+		[Obsolete]
+        public static IEnumerable<string> Words(int num = 3)
+        {
+			return GetWords(num);
+        }
+		
+		[Obsolete]
+        public static string Sentence(int wordCount = 4)
+        {
+			return GetSentence(wordCount);
+        }
+		
+		[Obsolete]
+        public static IEnumerable<string> Sentences(int sentenceCount = 3)
+        {
+			return GetSentences(sentenceCount);
+        }
+		
+		[Obsolete]
+        public static string Paragraph(int sentenceCount = 3)
+        {
+			return GetParagraph(sentenceCount);
+        }
+		
+		[Obsolete]
+        public static IEnumerable<string> Paragraphs(int paragraphCount = 3)
+        {
+			return GetParagraphs(paragraphCount);
         }
 
         static readonly string[] WORDS = new[] {"alias", "consequatur", "aut", "perferendis", "sit", "voluptatem", "accusantium",
