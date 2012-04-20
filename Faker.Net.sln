@@ -3,37 +3,38 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Net", "Faker.Net\Faker.Net.csproj", "{F4E27022-496C-48E5-8986-F68355C2ECB3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2A7160D9-3119-4C29-9A72-5ED84C5488F6}"
-	ProjectSection(SolutionItems) = preProject
-		Faker.Net.vsmdi = Faker.Net.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
-Project("{B373B46A-B089-44D7-96CA-CD150D098BC8}") = "Faker.Net.IronRuby.Tests", "Faker.Net.IronRuby.Tests\Faker.Net.IronRuby.Tests.rbproj", "{669DD2F4-19A2-4061-B3E7-03E188131A43}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{2A65F025-CF12-4A2E-B780-298EE5FC1050}"
-	ProjectSection(SolutionItems) = preProject
-		lib\sugar.dll = lib\sugar.dll
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faker.Net.NUnit.Tests", "Faker.Net.NUnit.Tests\Faker.Net.NUnit.Tests.csproj", "{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = Faker.Net.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{669DD2F4-19A2-4061-B3E7-03E188131A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F4E27022-496C-48E5-8986-F68355C2ECB3}.Release|x86.ActiveCfg = Release|Any CPU
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Debug|x86.ActiveCfg = Debug|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Debug|x86.Build.0 = Debug|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Release|Any CPU.ActiveCfg = Release|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Release|x86.ActiveCfg = Release|x86
+		{5535BD16-B1E6-40A9-9ADA-502EE21E14BC}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

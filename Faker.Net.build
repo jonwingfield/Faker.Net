@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<project name="Faker.NET" default="build" basedir=".">
+    <description>Faker.NET</description>
+    
+    <property name="mode" value="Release" unless="${property::exists('mode')}" />
+    <property name="output" value="./bin/${mode}" readonly="true" />
+    <property name="debug" value="true" if="${mode == 'Debug'}" readonly="true" />
+    <property name="debug" value="false" if="${mode == 'Release'}" readonly="true" />
+    
+    <echo message="Build Mode: ${mode}" />
+    <echo message="Output: ${output}" />
+
+    <target name="build">
+        <echo message="Building Faker.Net" />
+        <csc target="library" debug="${debug}" output="${output}/Faker.dll">
+            <sources>
+                <include name="./Faker.Net/*.cs" />
+                <include name="./Faker.Net/Extensions/*.cs" />
+                <include name="./Faker.Net/Properties/AssemblyInfo.cs" />
+            </sources>
+        </csc>
+    </target>
+
+    <target name="test" depends="build">
+        <echo message="Building Faker.Net unit-tests" />
+        <csc target="library" debug="${debug}" output="${output}/Faker.Tests.dll">
+            <references>
+                <include name="${output}/Faker.dll" />
+                <include name="./NUnit/nunit.framework.dll" />
+            </references>
+            <sources>
+                <include name="./Faker.Net.NUnit.Tests/*.cs" />
+                <include name="./Faker.Net.NUnit.Tests/Properties/AssemblyInfo.cs" />>
+            </sources>
+        </csc>
+
+        <echo message="Running Faker.Net unit-tests" />
+		
+        <copy file="./NUnit/nunit.framework.dll" todir="${output}" />
+		
+		<nunit2>
+            <formatter type="Plain" />
+            <test assemblyname="${output}/Faker.Tests.dll" />
+        </nunit2>
+		
+		<delete file="${output}/nunit.framework.dll" />
+    </target>
+
+    <target name="clean">
+        <echo message="Cleaning ${output}" />
+        <delete dir="${output}" includeemptydirs="true" />>
+    </target>
+</project>

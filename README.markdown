@@ -3,18 +3,37 @@ Faker.NET
 
 As much as possible, a line-for-line port of ffaker for ruby (https://github.com/EmmanuelOga/ffaker).
 
-Relies on my fork (https://github.com/jonwingfield/sugar) of Rob Conery's excellent sugar library (I plan on requesting a pull eventually).
+Relies on ideas taken from Rob Conery's and Jon Wingfield's excellent sugar library (https://github.com/jonwingfield/sugar). I have just taken the idea to minimize the assembly's dependencies.
+
+Supports .NET Framework and Mono.
+
+
+Building
+------------------------------------------------
+
+nant build
+
+nant build -D:mode=Debug
 
 
 Tests
 ------------------------------------------------
 
-There is a project in the solution named Faker.Net.IronRuby.Tests that uses the relevant ffaker tests written in Ruby to test the .NET code.
-To run these tests, simply run 
-	
-	irake test
+There is a project in the solution named Faker.Net.NUnit.Tests that uses the relevant ffaker tests written in Ruby to test the .NET code.
 
-from the command line and the tests will run.  You will need to compile the project first.  For now, it's hard-coded to point at the debug folder.
+NAnt command to run unit-tests
+
+nant test
+
+nant test -D:mode=Debug
+
+
+Cleaning build output
+-------------------------------------------------
+
+nant clean
+
+nant clean -D:mode=Debug
 
 
 Contrib
