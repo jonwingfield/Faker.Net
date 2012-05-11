@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using Faker.Extensions;
 
 namespace Faker
 {
     public static class Company
     {
-        public static string name()
+        public static string GetName()
         {
             switch (FakerRandom.Rand.Next(3))
             {
-                case 0: return Name.LastName() + " " + Suffix();
-                case 1: return Name.LastName() + "-" + Name.LastName();
-                case 2: return String.Format("{0}, {1} and {2}", Name.LastName(), Name.LastName(), Name.LastName());
+                case 0: return Name.GetLastName() + " " + GetSuffix();
+                case 1: return Name.GetLastName() + "-" + Name.GetLastName();
+                case 2: return String.Format("{0}, {1} and {2}", Name.GetLastName(), Name.GetLastName(), Name.GetLastName());
                 default: throw new ApplicationException();
             }
         }
 
-        public static string Suffix()
+        public static string GetSuffix()
         {
             return SUFFIXES.Rand();
         }
@@ -27,19 +24,19 @@ namespace Faker
 
         // Generate a buzzword-laden catch phrase.
         // Wordlist from http://www.1728.com/buzzword.htm
-        public static string CatchPhrase()
+        public static string GetCatchPhrase()
         {
             return CATCH_PRE.Rand() + " " + CATCH_MID.Rand() + " " + CATCH_POS.Rand();
         }
 
         // When a straight answer won't do, BS to the rescue!
         // Wordlist from http://dack.com/web/bullshit.html
-        public static string BS()
+        public static string GetBS()
         {
             return BS_PRE.Rand() + " " + BS_MID.Rand() + " " + BS_POS.Rand();
         }
 
-        public static string Position()
+        public static string GetPosition()
         {
             switch (FakerRandom.Rand.Next(3))
             {
@@ -48,6 +45,36 @@ namespace Faker
                 case 2: return POSITION_PREFIXES.Rand() + " " + POSITION_AREAS.Rand() + " " + POSITIONS.Rand();
                 default: throw new ApplicationException();
             }
+        }
+
+		[Obsolete]
+		public static string name()
+        {
+			return GetName();
+        }
+		
+		[Obsolete]
+        public static string Suffix()
+        {
+			return GetSuffix(); 
+        }
+		
+		[Obsolete]
+        public static string CatchPhrase()
+        {
+			return GetCatchPhrase();
+        }
+  		
+		[Obsolete]
+		public static string BS()
+        {
+			return GetBS();
+        }
+		
+		[Obsolete]
+        public static string Position()
+        {
+			return GetPosition();
         }
 
         static readonly string[] SUFFIXES = new[] { "Inc", "and Sons", "LLC", "Group" };
