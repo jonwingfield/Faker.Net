@@ -1,6 +1,9 @@
 bin
 obj
 TestResults
+test-results
 *~
 *.swp
 *.suo
+*.pidb
+*.userprefs
