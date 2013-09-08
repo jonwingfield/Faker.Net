@@ -51,7 +51,7 @@ namespace Faker.Tests
 		[Test]
 		public void TestUKCountry()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.GetUKCounty(), @"[ a-z]"));
+			Assert.IsTrue(Regex.IsMatch(Address.GetUKCountry(), @"[ a-z]"));
 		}
 		
 		[Test]
@@ -89,5 +89,11 @@ namespace Faker.Tests
 		{
 			Assert.IsTrue(Regex.IsMatch(Address.GetNeighborhood(), @"[ a-z]+"));
 		}
+
+        [Test]
+        public void TestWorldCountry()
+        {
+            Assert.IsTrue(Regex.IsMatch(Address.GetCountry(), @"[ a-z]"));
+        }
 	}
 }
