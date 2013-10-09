@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>FFaker.Net</id>
+    <version>$version$</version>
+    <authors>Jon Wingfield</authors>
+    <owners>PulsarBlow</owners>
+    <licenseUrl>https://github.com/jonwingfield/Faker.Net</licenseUrl>
+    <projectUrl>https://github.com/PulsarBlow/Faker.Net</projectUrl>
+    <description>$description$</description>
+    <releaseNotes>First NuGet package release.</releaseNotes>
+    <copyright>Copyright (c) 2011, Jon Wingfield (wingfield.jon@gmail.com)</copyright>
+    <tags>Faker Fake Test Data Generator</tags>
+  </metadata>
+</package>
