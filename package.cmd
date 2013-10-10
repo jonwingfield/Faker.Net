@@ -1,0 +1,1 @@
+NuGet.exe pack ".\Faker.Net\Faker.Net.csproj"  -Build -Symbols -Properties Configuration=Release
