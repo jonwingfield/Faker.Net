@@ -65,7 +65,7 @@ namespace Faker
         }
 
         public static string GetUSStreetAddress(bool includeSecondary = false){
-            var str = (FakerRandom.Rand.Next(3).Times("#")) + ("### " + GetStreetName());
+            var str = (FakerRandom.Rand.Next(3).Times("#").Join("")) + ("### " + GetStreetName());
           if (includeSecondary)
               str += " " + GetSecondaryAddress();
 
@@ -74,11 +74,11 @@ namespace Faker
 
         public static string GetEUStreetAddress(bool includeSecondary = false)
         {
-            var str = GetStreetName() + " " + (FakerRandom.Rand.Next(3).Times("#"));
+            var str = GetStreetName() + " " + (FakerRandom.Rand.Next(3).Times("#").Join(""));
             if (includeSecondary)
                 str += " " + GetSecondaryAddress();
-
-            return str.Numerify();
+            var res = str.Numerify();
+            return res;
         }
 
         public static string GetSecondaryAddress()

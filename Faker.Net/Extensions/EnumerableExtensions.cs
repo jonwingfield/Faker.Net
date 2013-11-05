@@ -8,8 +8,10 @@ namespace Faker.Extensions
     {
 		public static string Join<T>(this IEnumerable<T> items, string separator)
 		{
-			return items.Select(i => i.ToString())
+            if (items.Any())
+			    return items.Select(i => i.ToString())
 						.Aggregate((acc, next) => string.Concat(acc, separator, next));
+		    return "";
 		}
 		
         public static T Rand<T>(this IEnumerable<T> items)
