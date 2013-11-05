@@ -31,10 +31,17 @@ namespace Faker.Tests
 		}
 		
 		[Test]
-		public void TestStreetAddress()
+		public void TestUSStreetAddress()
 		{
-			Assert.IsTrue(Regex.IsMatch(Address.GetStreetAddress(), @"[ a-z]"));
+            var address = Address.GetEUStreetAddress();
+            Assert.IsTrue(Regex.IsMatch(address, @"[ a-z]"));
 		}
+        [Test]
+        public void TestEUStreetAddress()
+        {
+            var address = Address.GetEUStreetAddress();
+            Assert.IsTrue(Regex.IsMatch(address, @"[ a-z]"));
+        }
 		
 		[Test]
 		public void TestStreetName()
