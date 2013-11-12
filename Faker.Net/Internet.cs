@@ -32,11 +32,17 @@ namespace Faker
             return GetUserName(name) + "@" + HOSTS.Rand();
         }
 
+        public static string GetUserName(string firstName, string lastName)
+        {
+            string parts = new string[]{firstName, lastName}.Join(new[] { ".", "_", "" }.Rand());
+            return parts.ToLower();
+        }
+
         public static string GetUserName(string name = null)
         {
             if (name != null)
             {
-                string parts = name.Split(' ').Join(new[] { ".", "_" }.Rand());
+                string parts = name.Split(' ').Join(new[] { ".", "_", "" }.Rand());
                 return parts.ToLower();
             }
             else
@@ -149,6 +155,6 @@ namespace Faker
         private static readonly string[] BYTE; //new [] { ((0..255).to_a.map { |n| n.to_s })
         static readonly string[] HOSTS = new[] { "gmail.com", "yahoo.com", "hotmail.com" };
         static readonly string[] DISPOSABLE_HOSTS = new[] { "mailinator.com", "suremail.info", "spamherelots.com", "binkmail.com", "safetymail.info", "tempinbox.com" };
-        static readonly string[] DOMAIN_SUFFIXES = new[] { "co.uk", "com", "us", "uk", "ca", "biz", "info", "name" };
+        static readonly string[] DOMAIN_SUFFIXES = new[] { "co.uk", "com", "us", "uk", "ca", "biz", "info", "name", "be", "eu", "nl", "me" };
     }
 }
