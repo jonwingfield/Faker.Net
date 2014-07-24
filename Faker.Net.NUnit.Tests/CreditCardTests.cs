@@ -6,6 +6,12 @@ namespace Faker.Tests
 	[TestFixture()]
 	public class CreditCardTests
 	{
+		
+		[ExpectedException( typeof( ArgumentException ) )]
+		public void TestInvalidCreditCardType()
+		{
+			CreditCard.CreditCardNumber ("others");
+		}
 
 		[Test()]
 		public void TestVisaCreditCardNumber()

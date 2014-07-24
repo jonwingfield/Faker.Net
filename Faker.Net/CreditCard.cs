@@ -17,23 +17,23 @@ namespace Faker
 		public static string[] VISA_PREFIX_IIN_RANGES = new[]{ "4539", "4556", "4916", "4532", "4929", "40240071", "4485", "4716", "4" };
 
 		private static Int16 VISA_LENGTH = 16;
-		public static Int16 MASTER_LENGTH = 16;
-		public static Int16 DINNERS_CLUB_LENGTH = 16;
+		private static Int16 MASTER_LENGTH = 16;
+		private static Int16 DINNERS_CLUB_LENGTH = 16;
 
 		public static string CreditCardNumber(string type){
+			if (String.IsNullOrEmpty(type)) { throw new ArgumentException("Invalid credit card type"); }
 
-			CreditCard creditCard = new CreditCard ();
-			type = type.ToUpper ();
+			type = type.ToUpper();
 
-			if (type.Equals (VISA)) 
+			if (type.Equals(VISA)) 
 			{
 				return CreateCreditCardNumber(VISA_PREFIX_IIN_RANGES, VISA_LENGTH);
 			} 
-			else if (type.Equals (MASTER_CARD)) 
+			else if (type.Equals(MASTER_CARD)) 
 			{
 				return CreateCreditCardNumber(MASTERCARD_PREFIX_IIN_RANGES, MASTER_LENGTH);
 			} 
-			else if (type.Equals (DINNERS_CLUB))
+			else if (type.Equals(DINNERS_CLUB))
 			{
 				return CreateCreditCardNumber(DINERS_PREFIX_IIN_RANGES, DINNERS_CLUB_LENGTH);
 			} else {
