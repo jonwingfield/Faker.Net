@@ -8,15 +8,15 @@ namespace Faker
 	public class CreditCard
 	{
 	
-		public static string VISA = "VISA";
-		public static string MASTER_CARD = "MASTER CARD";
-		public static string DINNERS_CLUB = "DINNERS CLUB";
+		private static string VISA = "VISA";
+		private static string MASTER_CARD = "MASTER CARD";
+		private static string DINNERS_CLUB = "DINNERS CLUB";
 
-		public static string[] DINERS_PREFIX_IIN_RANGES = new[] { "300", "301", "302", "303", "36", "38" };
-		public static string[] MASTERCARD_PREFIX_IIN_RANGES = new[]{ "51", "52", "53", "54", "55" };
+		private static string[] DINERS_PREFIX_IIN_RANGES = new[] { "300", "301", "302", "303", "36", "38" };
+		private static string[] MASTERCARD_PREFIX_IIN_RANGES = new[]{ "51", "52", "53", "54", "55" };
 		public static string[] VISA_PREFIX_IIN_RANGES = new[]{ "4539", "4556", "4916", "4532", "4929", "40240071", "4485", "4716", "4" };
 
-		public static Int16 VISA_LENGTH = 16;
+		private static Int16 VISA_LENGTH = 16;
 		public static Int16 MASTER_LENGTH = 16;
 		public static Int16 DINNERS_CLUB_LENGTH = 16;
 
