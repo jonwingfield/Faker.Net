@@ -16,18 +16,18 @@ namespace Faker.Tests
 		[Test()]
 		public void TestVisaCreditCardNumber()
 		{
-			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("VISA")));
+			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("visa")));
 		}
 
 		[Test()]
 		public void TestMasterCardCreditCardNumber()
 		{
-			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("MASTER CARD")));
+			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("mastercard")));
 		}
 		[Test()]
 		public void TestDinnersClubCreditCardNumber()
 		{
-			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("DINNERS CLUB")));
+			Assert.True (IsValidNumber(CreditCard.CreditCardNumber ("dinersclub")));
 		}
 
 		/*validate credicard number */
