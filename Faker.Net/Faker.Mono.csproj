@@ -46,6 +46,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\NumberExtensions.cs" />
+    <Compile Include="CreditCard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

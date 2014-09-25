@@ -52,6 +52,7 @@
     <Compile Include="AddressTests.cs" />
     <Compile Include="InternetTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CreditCardTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
