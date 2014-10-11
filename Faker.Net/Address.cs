@@ -64,12 +64,21 @@ namespace Faker
             }
         }
 
-        public static string GetStreetAddress(bool includeSecondary = false){
-            var str = (FakerRandom.Rand.Next(3).Times("#")) + ("### " + GetStreetName());
+        public static string GetUSStreetAddress(bool includeSecondary = false){
+            var str = (FakerRandom.Rand.Next(3).Times("#").Join("")) + ("### " + GetStreetName());
           if (includeSecondary)
               str += " " + GetSecondaryAddress();
 
           return str.Numerify();
+        }
+
+        public static string GetEUStreetAddress(bool includeSecondary = false)
+        {
+            var str = GetStreetName() + " " + (FakerRandom.Rand.Next(3).Times("#").Join(""));
+            if (includeSecondary)
+                str += " " + GetSecondaryAddress();
+            var res = str.Numerify();
+            return res;
         }
 
         public static string GetSecondaryAddress()
@@ -152,9 +161,15 @@ namespace Faker
         }
 		
 		[Obsolete]
-        public static string StreetAddress(bool includeSecondary = false)
+        public static string EUStreetAddress(bool includeSecondary = false)
 		{
-			return GetStreetAddress(includeSecondary);
+			return GetEUStreetAddress(includeSecondary);
+        }
+
+        [Obsolete]
+        public static string USStreetAddress(bool includeSecondary = false)
+        {
+            return GetUSStreetAddress(includeSecondary);
         }
 		
 		[Obsolete]
