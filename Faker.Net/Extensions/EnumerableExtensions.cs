@@ -11,7 +11,16 @@ namespace Faker.Extensions
 			return items.Select(i => i.ToString())
 						.Aggregate((acc, next) => string.Concat(acc, separator, next));
 		}
-		
+
+        public static T Rand<T>(this T[] items)
+        {
+            if (items.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
+            return items[FakerRandom.Rand.Next(items.Length)];
+        }
+
         public static T Rand<T>(this IEnumerable<T> items)
         {
             IList<T> list;
