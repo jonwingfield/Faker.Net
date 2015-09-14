@@ -11,7 +11,12 @@ namespace Faker.Extensions
 			return items.Select(i => i.ToString())
 						.Aggregate((acc, next) => string.Concat(acc, separator, next));
 		}
-		
+
+        public static T Rand<T>(this T[] items)
+        {
+            return items[FakerRandom.Rand.Next(items.Length - 1)];
+        }
+
         public static T Rand<T>(this IEnumerable<T> items)
         {
             IList<T> list;
