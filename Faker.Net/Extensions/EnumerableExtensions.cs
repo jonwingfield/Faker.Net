@@ -14,7 +14,11 @@ namespace Faker.Extensions
 
         public static T Rand<T>(this T[] items)
         {
-            return items[FakerRandom.Rand.Next(items.Length - 1)];
+            if (items.Length == 0)
+            {
+                throw new ArgumentException("array is empty");
+            }
+            return items[FakerRandom.Rand.Next(items.Length)];
         }
 
         public static T Rand<T>(this IEnumerable<T> items)
