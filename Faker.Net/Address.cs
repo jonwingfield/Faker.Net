@@ -93,6 +93,23 @@ namespace Faker
             return UK_POSTCODE.Rand().Bothify().ToUpper();
         }
 
+        // AU Variants
+        public static string GetAUState()
+        {
+            return AU_STATE.Rand();
+        }
+
+        public static string GetAUStateAbbr()
+        {
+            return AU_STATE_ABBR.Rand();
+        }
+
+        public static string GetAUPostcode()
+        {
+            return AU_POSTCODE.Rand().Numerify();
+        }
+
+
         public static string GetNeighborhood()
         {
             return NEIGHBORHOOD.Rand();
@@ -268,6 +285,12 @@ namespace Faker
       "Olmsted Falls Central", "South of Lake Shore Blvd", "Gates Mills North", "White Oak South of Columbia Pike",
       "Rockville East of Hungerford Dr", "Cleveland Park" };
 
+        static readonly string[] AU_STATE = new[] {" New South Wales", "Victoria", "Queensland", "South Australia",
+      "Western Australia", "Tasmania", "Australian Capital Territory" };
+
+        static readonly string[] AU_STATE_ABBR = new[] { "NSW", "VIC", "QLD", "SA", "WA", "TAS", "ACT" };
+
+        static readonly string[] AU_POSTCODE = new[] { "####" };
         public static readonly string[] COUNTRY =
         {
             "Åland Islands",
