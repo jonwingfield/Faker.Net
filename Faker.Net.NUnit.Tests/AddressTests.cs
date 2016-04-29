@@ -95,5 +95,22 @@ namespace Faker.Tests
         {
             Assert.IsTrue(Regex.IsMatch(Address.GetCountry(), @"[ a-z]"));
         }
-	}
+        [Test]
+        public void TestAUState()
+        {
+            Assert.IsTrue(Regex.IsMatch(Address.GetAUState(), @"[ a-z]"));
+        }
+
+        [Test]
+        public void TestAUStateAbbr()
+        {
+            Assert.IsTrue(Regex.IsMatch(Address.GetAUStateAbbr(), @"[A-Z]"));
+        }
+
+        [Test]
+        public void TestAUPostCode()
+        {
+            Assert.IsTrue(Regex.IsMatch(Address.GetAUPostcode(), @"[0-9]"));
+        }
+    }
 }
